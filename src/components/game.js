@@ -11,9 +11,12 @@ export default class Game extends React.Component{
         this.state={
             count: 0,
             guesses : [],
-            solution: 50,
-            lastGuess: null,
+            solution: this.generateNewSolution(),
         };
+    }
+
+    generateNewSolution() {
+        return Math.floor(Math.random() * 100) + 1;
     }
 
     handleNewGuess(val){
